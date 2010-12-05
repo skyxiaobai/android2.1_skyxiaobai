@@ -28,6 +28,7 @@ baba
 nainai
 erzi
 nihaohao
+nihaohao
 public class Setting extends PreferenceActivity {
 	public static final String PREFS_NAME = "prefs";
 
