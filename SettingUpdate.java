@@ -21,16 +21,11 @@ import android.widget.LinearLayout;
 import android.widget.TimePicker;
 import android.widget.LinearLayout.LayoutParams;
 
-zhouwenjie
-zhengshuo
-mama
-baba
-nainai
-erzi
 nihaohao
 
 12345
 23456
+63663636
 public class Setting extends PreferenceActivity {
 	public static final String PREFS_NAME = "prefs";
 
