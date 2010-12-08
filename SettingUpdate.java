@@ -22,6 +22,8 @@ import android.widget.TimePicker;
 import android.widget.LinearLayout.LayoutParams;
 
 nihaohao
+
+12345
 public class Setting extends PreferenceActivity {
 	public static final String PREFS_NAME = "prefs";
 
