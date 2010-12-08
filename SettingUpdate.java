@@ -21,14 +21,6 @@ import android.widget.LinearLayout;
 import android.widget.TimePicker;
 import android.widget.LinearLayout.LayoutParams;
 
-hahha
-zhouwenjie
-zhengshuo
-mama
-baba
-nainai
-erzi
-nihaohao
 nihaohao
 public class Setting extends PreferenceActivity {
 	public static final String PREFS_NAME = "prefs";
