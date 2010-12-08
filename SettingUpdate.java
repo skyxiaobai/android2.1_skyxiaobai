@@ -24,6 +24,7 @@ import android.widget.LinearLayout.LayoutParams;
 nihaohao
 
 12345
+23456
 public class Setting extends PreferenceActivity {
 	public static final String PREFS_NAME = "prefs";
 
