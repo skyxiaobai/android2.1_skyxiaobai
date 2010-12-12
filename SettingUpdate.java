@@ -43,6 +43,7 @@ public class Setting extends PreferenceActivity {
 
 	private PreferenceScreen createPreferenceHierarchy() {
 		// Root
+		abc
 		PreferenceManager pm = getPreferenceManager();
 		pm.setSharedPreferencesName(PREFS_NAME);
 		pm.setSharedPreferencesMode(MODE_PRIVATE);
