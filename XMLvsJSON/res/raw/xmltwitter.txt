@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<statuses type="array">
+<status>
+  <created_at>Thu Apr 29 05:25:29 +0000 2010</created_at>
+  <id>13052369631</id>
+  <text>Wrapping up new article on JSON for Android programmers...</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications>false</notifications>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following>false</following>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Tue Apr 27 16:39:10 +0000 2010</created_at>
+  <id>12953805842</id>
+  <text>taking photos with Android's built-in camera.  And a hidden (but easy) puzzle.  http://lnkd.in/cbwEGF</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Thu Apr 22 20:20:23 +0000 2010</created_at>
+  <id>12659033794</id>
+  <text>Launched beta version of iPhone app today for a client.</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Mon Apr 19 15:53:13 +0000 2010</created_at>
+  <id>12462534354</id>
+  <text>There is a worm in Apple's iOS 4.0.  http://lnkd.in/6ajf3m</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Sat Apr 17 23:20:48 +0000 2010</created_at>
+  <id>12366308239</id>
+  <text>Interesting development in iPad land -- don't bring it to Israel.  http://lnkd.in/b7VPxR</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Thu Apr 15 05:42:21 +0000 2010</created_at>
+  <id>12207469624</id>
+  <text>Coverage from the Marketing and Public Relations Panel last night: http://lnkd.in/2pBfux</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Wed Apr 14 03:15:21 +0000 2010</created_at>
+  <id>12141981847</id>
+  <text>Great event tonight @ sussex county community college.  Good turnout.  Good discussions.</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Tue Apr 13 19:05:30 +0000 2010</created_at>
+  <id>12119267469</id>
+  <text>Presenting tonight at the Young Business Leaders event.</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Tue Apr 06 02:16:03 +0000 2010</created_at>
+  <id>11674832507</id>
+  <text>Day one with the Nexus One.  http://www.linux-mag.com/id/7753</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Fri Apr 02 19:46:50 +0000 2010</created_at>
+  <id>11497546569</id>
+  <text>Just ordered the Nexus One so I can finish Unlocking Android Second Edition.  Got tired of waiting for an upgrade for the ADP1.</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Wed Mar 31 04:49:41 +0000 2010</created_at>
+  <id>11350036731</id>
+  <text>Apple's iGroups -- better social networking or DOA?  What do you think?
+Read more @ Linux Magazine: http://www.linux-mag.com/id/7746</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Fri Mar 26 20:58:36 +0000 2010</created_at>
+  <id>11109502138</id>
+  <text>finishing up an iPhone application for time and billing.</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Wed Mar 24 15:16:31 +0000 2010</created_at>
+  <id>10983738595</id>
+  <text>A good resource for those interested in other ways to solve insurance mess:  http://www.healthinsurancebook.net/</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Tue Mar 23 15:25:53 +0000 2010</created_at>
+  <id>10930186396</id>
+  <text>Google is no longer in China, but they may be in your living room in an Android-powered set top box.  http://linux-mag.com/id/7738</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Mon Mar 15 21:56:19 +0000 2010</created_at>
+  <id>10536931705</id>
+  <text>posted an article on Linux Magazine covering JSON parsing in Android:  http://www.linux-mag.com/id/7717.  Also a little info re #WorldVision</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Tue Mar 09 04:36:45 +0000 2010</created_at>
+  <id>10205874846</id>
+  <text>posted an article on Titanium 1.0 -- Appcelerator's cross-platform tool for building iPhone &amp; Android apps. http://www.linux-mag.com/id/7719</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Wed Mar 03 20:59:53 +0000 2010</created_at>
+  <id>9940455727</id>
+  <text>Just finished a slide deck for a social networking presentation I am making next week to a group at the Park Avenue Club.</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Tue Mar 02 12:01:36 +0000 2010</created_at>
+  <id>9871246820</id>
+  <text>recently posted an article on Linux Magazine covering the creation of dynamic UI elements for the iPhone: http://www.linux-mag.com/id/7713</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Sun Feb 28 00:09:10 +0000 2010</created_at>
+  <id>9752060617</id>
+  <text>I'm listening to 'Edison, His Life and Inventions' in the Audiobooks app on my iPhone http://j.mp/AudiobooksApp</text>
+  <source>&lt;a href="http://mattgemmell.com/source" rel="nofollow"&gt;MGTwitterEngine&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+<status>
+  <created_at>Wed Feb 17 15:30:14 +0000 2010</created_at>
+  <id>9238147801</id>
+  <text>Writing about Android user interfaces without the WYSIWYG tools -- ie. dynamically generated:
+
+http://www.linux-mag.com/id/7705</text>
+  <source>&lt;a href="http://www.linkedin.com/" rel="nofollow"&gt;LinkedIn&lt;/a&gt;</source>
+  <truncated>false</truncated>
+  <in_reply_to_status_id/>
+  <in_reply_to_user_id/>
+  <favorited>false</favorited>
+  <in_reply_to_screen_name/>
+  <user>
+    <id>15221439</id>
+    <name>fableson</name>
+    <screen_name>fableson</screen_name>
+    <location>Byram Township, NJ</location>
+    <description/>
+    <profile_image_url>http://a3.twimg.com/profile_images/260492935/bookcover_normal.jpg</profile_image_url>
+    <url>http://msiservices.com</url>
+    <protected>false</protected>
+    <followers_count>52</followers_count>
+    <profile_background_color>9ae4e8</profile_background_color>
+    <profile_text_color>000000</profile_text_color>
+    <profile_link_color>0000ff</profile_link_color>
+    <profile_sidebar_fill_color>e0ff92</profile_sidebar_fill_color>
+    <profile_sidebar_border_color>87bc44</profile_sidebar_border_color>
+    <friends_count>10</friends_count>
+    <created_at>Tue Jun 24 17:04:11 +0000 2008</created_at>
+    <favourites_count>0</favourites_count>
+    <utc_offset>-18000</utc_offset>
+    <time_zone>Eastern Time (US &amp; Canada)</time_zone>
+    <profile_background_image_url>http://s.twimg.com/a/1272044617/images/themes/theme1/bg.png</profile_background_image_url>
+    <profile_background_tile>false</profile_background_tile>
+    <notifications/>
+    <geo_enabled>false</geo_enabled>
+    <verified>false</verified>
+    <following/>
+    <statuses_count>91</statuses_count>
+    <lang>en</lang>
+    <contributors_enabled>false</contributors_enabled>
+  </user>
+  <geo/>
+  <coordinates/>
+  <place/>
+  <contributors/>
+</status>
+</statuses>
