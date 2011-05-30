@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/extensions/match_parse
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/extensions/match_parse/__init__.py
+END
+test-match_parse.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/extensions/match_parse/test-match_parse.py
+END
+test-match_parse.twill
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/extensions/match_parse/test-match_parse.twill
+END

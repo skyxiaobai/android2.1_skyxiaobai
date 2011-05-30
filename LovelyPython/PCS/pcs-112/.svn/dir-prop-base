@@ -1,0 +1,38 @@
+K 10
+svn:ignore
+V 181
+~.* 
+.*.swp
+*.avi
+*.bak
+*.cab
+*.doc
+*.dcu
+*.dll
+*.exp
+*.err
+*.idb
+*.map
+*.mp3
+*.mpeg
+*.opt
+*.pyc
+*.pdb
+*.plg
+*.positions
+*.pch
+*.ppt
+*.doc
+*.rar
+*.rm
+*.rmvb
+*.wma
+*.wmv
+*.xls
+*.zip
+
+K 13
+svn:mergeinfo
+V 0
+
+END

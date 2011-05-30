@@ -1,0 +1,150 @@
+##language:zh
+#pragma section-numbers off
+||'''status'''|| 校对 || || 完成度100%||
+
+
+[[TableOfContents]]
+
+##startInc
+= PCS102 For 循环 =
+== 概述 ==
+For语句是主要的流程控制语句之一, 最基本的用法是和其他语言类似的, 不过特殊之处在于Python的for语句具有两种不同的风格形式, 下面会详细介绍.
+
+== 使用 ==
+首先举个最简单的例子:
+{{{
+  for item in [1, 2, 3]:
+      print item
+}}}
+上面的代码其实就是遍历了列表[1, 2, 3]，将其中每一个元素都打印出来。所有的循环语句中都可以使用这么两条语句：break和continue。break表示要退出循环， continue是说直接进入到下一轮的循环中去：
+{{{
+  >>> for item in range(10):
+  ...     if item<5:         # 遇到比 5 小的
+  ...         continue       # 进入下一轮循环
+  ...     else:              # 否则遇到的是大于等于 5 的
+  ...         print item     # 输出
+  ...         break          # 并直接退出循环
+  ...
+  5
+}}}
+上面这个例子中的循环体也可以这么写的：
+{{{
+  if item>=5:
+      print item
+      break
+}}}
+for语句后面可以跟else子句，在这里else子句含义是：如果 for 一直循环到了末尾，最后正常退出循环，那么随后就会执行它的else子句，否则由于break语句或异常等原因退出循环的，则不会执行else子句。其实在程序中常常会遇到这样的场景：对某个列表中每一个元素执行某个操作，如果成功执行则马上break跳出循环，如果遍历完整个列表，发现没有一个元素满足要求，也就是意味着遍历失败，那么处理失败情况的语句就可以放在else子句中了，比如：
+{{{
+  >>> for item in range(10):
+  ...     if item<10:
+  ...         continue
+  ...     else:
+  ...         print item
+  ...         break
+  ... else:
+  ...     print '没有大于等于10的数字'
+  ...
+  没有大于等于10的数字
+}}}
+
+如果熟悉C语言的话，便会看出Python的for和C的for的不同，表面上的语法差异自然容易看出，但实际上他们的含义却是有根本的不同的。要类比Python这种形式的for语句的话，可以想象某些语言的for in或者foreach之类的语法。
+{{{
+
+    /* c 语言 */
+    for(int i=0; i<count; i++){
+        ...
+    }
+    
+    # python
+    for item in a_iterable:
+        ...
+}}}
+简单地说，C语言形式的for语句的工作原理是这样的：取第0个、第1个、第2个，一直取到最后一个这样子。而迭代器这种呢，就是对迭代器取下一个、取下一个、取下一个，一直取到迭代器自己喊停为止。实际上Python 的for语句是同时支持这两种风格的。
+先来解剖一下Python 的for语句：
+{{{
+    for item in obj:
+        ...
+}}}
+如果obj对象实现了{{{__iter__}}}方法，就是说它是个迭代器，那这就是迭代器风格的for语句，而上面这段代码也就等价于：
+{{{
+    iterator = iter(obj) # 获取迭代器。
+    # iter(obj) 等价于 obj.__iter__()
+    try:
+        item = iterator.next() # 取下一个
+        ...
+        item = iterator.next() # 取下一个
+        ...
+    except StopIteration:      # 迭代器喊停
+        pass
+}}}
+如果上面的obj对象实现了{{{__getitem__}}}方法，也就是说它支持索引操作，这就成了C 语言风格的那种迭代器，这段代码便等价于：
+{{{    
+    try:
+      item = obj[0]      # 取第0个
+      # obj[0] 等价于 obj.__getitem__(0)
+      ...
+      item = obj[1]      # 取第1个
+      ...
+    except IndexError:      # 取到最后一个
+        pass
+}}}
+最后再测试一下：
+{{{
+    >>> class Indexable(object):
+    ...     def __getitem__(self, i):   # 定义__getitem__, 如果i大于10，就停止迭代
+    ...         if i>10:
+    ...             raise StopIteration()
+    ...         print 'get object %d'%i
+    ...
+    >>> class Iterable(object):
+    ...     def __init__(self):
+    ...         self.counter = 0
+    ...     def __iter__(self): 
+    ...         return self
+    ...     def next(self):
+    ...         if self.counter>10: # 如果计数器大于10，就停止迭代
+    ...             raise StopIteration()
+    ...         print 'get next, current is %d'%self.counter
+    ...         self.counter += 1 # 计数器增1
+    ...
+    >>> container = Indexable()
+    >>> for i in container:pass
+    ...
+    get object 0
+    get object 1
+    get object 2
+    get object 3
+    get object 4
+    get object 5
+    get object 6
+    get object 7
+    get object 8
+    get object 9
+    get object 10
+    >>> container = Iterable()
+    >>> for i in container:pass
+    ...
+    get next, current is 0
+    get next, current is 1
+    get next, current is 2
+    get next, current is 3
+    get next, current is 4
+    get next, current is 5
+    get next, current is 6
+    get next, current is 7
+    get next, current is 8
+    get next, current is 9
+    get next, current is 10
+}}}
+
+== 小结 ==
+For循环是比较重要的控制流语句，本文介绍for语句的基本使用。
+ * For循环及相关控制流: http://docs.python.org/tut/node6.html#SECTION006200000000000000000
+ * 精巧地址: http://bit.ly/3it1MI
+ * The for statement: http://docs.python.org/ref/for.html
+ * 精巧地址: http://bit.ly/4sKUbJ
+
+##endInc
+----
+::Lizzie [2008/06/16 21:24:00]
+[[PageComment2]]

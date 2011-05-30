@@ -1,0 +1,117 @@
+##language:zh
+#pragma section-numbers off
+
+||status|| 草稿 ||清风 & liz; 100%||
+
+[[TableOfContents]]
+##startInc
+
+= PCS207 threading =
+== 概述 ==
+Python是支持多线程的,并且是native的线程,主要是通过thread和threading这两个模块来实现的.thread是比较底层的模块,threading是thread的包装,可以更加方便的被使用.这里需要提一下的是Python对线程的支持还不够完善,不能利用多CPU,但是下个版本的Python中已经考虑改进这点.
+
+== 使用 ==
+threading模块里面主要是对一些线程的操作对象化了,创建了叫Thread的类.
+
+使用线程有两种方法,一种是创建线程要执行的函式,把这个函式传递进Thread对象里,让它来执行.
+{{{#!python
+# -*- coding: utf-8 -*-
+import string, threading, time
+
+def thread_main(a):
+    global count, mutex
+    # 获得线程名
+    threadname = threading.currentThread().getName()
+    
+    for x in xrange(0, int(a)):
+        # 取得锁
+        mutex.acquire()
+        count = count + 1
+        # 释放锁
+        mutex.release()
+        print threadname, x, count
+        time.sleep(1)
+    
+def main(num):
+    global count, mutex
+    threads = []
+    
+    count = 1
+    # 创建一个锁
+    mutex = threading.Lock()
+    # 先创建线程对象
+    for x in xrange(0, num):
+        threads.append(threading.Thread(target=thread_main, args=(10,)))
+    # 启动所有线程
+    for t in threads:
+        t.start()
+    # 主线程中等待所有子线程退出
+    for t in threads:
+        t.join()
+if __name__ == '__main__':
+    num = 4
+    # 创建4个线程
+    main(4)
+}}}
+这个例子中,主程序创建4个线程,每个线程对全局变量count进行加1运算.因为多个线程对同一个变量进行加1操作,为了避免冲突,在修改变量count之前加锁,之后解锁释放.运行下,可以看到:
+{{{
+~$ python pcs-207-1.py 
+Thread-1 0 2
+Thread-2 0 3
+Thread-3 0 4
+Thread-4 0 5
+Thread-1 1 6
+...
+Thread-1 8 34
+Thread-2 8 35
+Thread-3 8 36
+Thread-4 8 37
+Thread-1 9 38
+Thread-2 9 39
+Thread-3 9 40
+Thread-4 9 41
+}}}
+
+第二种方法是直接从Thread继承,创建一个新的类,把线程执行的代码放到这个新类里。
+{{{#!python
+# -*- coding: utf-8 -*-
+import threading
+import time
+
+class Test(threading.Thread):
+    def __init__(self, num):
+        threading.Thread.__init__(self)
+        self._run_num = num
+    
+    def run(self):
+        global count, mutex
+        threadname = threading.currentThread().getName()
+    
+        for x in xrange(0, int(self._run_num)):
+            # 取得锁
+            mutex.acquire()
+            count = count + 1
+            # 释放锁
+            mutex.release()
+            print threadname, x, count
+            time.sleep(1)
+
+if __name__ == '__main__':
+    global count, mutex
+    threads = []
+    num = 4
+    count = 1
+    # 创建锁
+    mutex = threading.Lock()
+    # 创建线程对象
+    for x in xrange(0, num):
+        threads.append(Test(10))
+    # 启动线程
+    for t in threads:
+        t.start()
+    # 等待子线程结束
+    for t in threads:
+        t.join()
+}}}
+这段代码的运行结果是和上面例子相同的,只是创建线程的方法是直接继承了threading.Thread类,主程序中只要创建这个类的对象就可以了.
+##endInc

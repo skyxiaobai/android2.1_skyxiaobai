@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1393/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/webservers
+END
+lrwplib.py
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/webservers/lrwplib.py
+END
+SimpleAsyncHTTPServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/webservers/SimpleAsyncHTTPServer.py
+END
+sock_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/webservers/sock_test.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/webservers/__init__.py
+END
+CustomHTTPServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/webservers/CustomHTTPServer.py
+END
+lrwpskel.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/webservers/lrwpskel.py
+END

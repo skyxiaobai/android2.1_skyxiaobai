@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/other_packages
+END
+subprocess.py
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/other_packages/subprocess.py
+END
+pyparsing.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/other_packages/pyparsing.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/other_packages/__init__.py
+END

@@ -1,0 +1,84 @@
+##language:zh
+#pragma section-numbers off
+
+||status|| 草稿 ||清风 & liz; 100%||
+
+[[TableOfContents]]
+
+##startInc
+= PCS204 ConfigParser =
+
+== 概述 ==
+ConfigParser是用来处理ini格式的配置文件的Python标准库.
+
+为自己的程序建立一个可配置的文件是一个良好的习惯,可以不修改源代码,就动态的改变程序的运行结果,方便维护
+
+== 使用 ==
+=== read(self, filenames) ===
+函式功能：直接读取ini文件内容，filenames可以是一文件名或是文件名列表
+{{{
+>>> from ConfigParser import ConfigParser
+>>> config = ConfigParser()
+>>> config.read('approachrc')
+['approachrc']
+}}}
+
+=== sections(self) ===
+函式功能：得到所有的section，并以列表的形式返回
+{{{
+>>> config.sections()
+['portal']
+}}}
+
+=== options(self, section) ===
+函式功能：得到指定section的所有option
+{{{
+>>> config.options('portal')
+['username', 'host', 'url', 'password', 'port']
+}}}
+
+=== get(self, section, option, raw=False, vars=None) ===
+函式功能：得到section中option的值，返回为string类型
+{{{
+>>> config.get('portal', 'username')
+'dhellmann'
+}}}
+
+=== set(self, section, option, value) ===
+函式功能：对section中的option进行设置值为value
+{{{
+>>> config.set('portal', 'username', 'lovelypython')
+>>> config.get('portal', 'username')
+'lovelypython'
+}}}
+
+=== 实例 ===
+假设有如下的配置文件示例:
+{{{
+[portal]
+url = http://%(host)s:%(port)s/Portal
+username = dhellmann
+host = localhost
+password = SECRET
+port = 8080
+}}}
+使用ConfigParse解析:
+{{{#!python
+from ConfigParser import ConfigParser
+import os
+
+filename = os.path.join('.', 'approachrc')
+print filename
+
+config = ConfigParser()
+config.read(filename)
+
+url = config.get('portal', 'url')
+print url
+}}}这段代码中,config读取approachrc内容,获得字段portal中的选项url的值,可以看到approachrc中的url为http://%(host)s:%(port)s/Portal,这里的%(host)s和%(port)s又分别读取了host和port的值,最终得到了如下的结果:
+{{{
+~$ python pcs-204-1.py 
+./approachrc
+http://localhost:8080/Portal
+}}}
+##endInc

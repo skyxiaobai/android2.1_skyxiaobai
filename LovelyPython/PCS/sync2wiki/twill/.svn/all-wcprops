@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill
+END
+parse.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/parse.py
+END
+errors.py
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/errors.py
+END
+namespaces.py
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/namespaces.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/__init__.py
+END
+unit.py
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/unit.py
+END
+utils.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/utils.py
+END
+commands.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/commands.py
+END
+_browser.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/_browser.py
+END
+browser.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/browser.py
+END
+wsgi_intercept.py
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/wsgi_intercept.py
+END
+shell.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/1785/trunk/LovelyPython/PCS/sync2wiki/twill/shell.py
+END

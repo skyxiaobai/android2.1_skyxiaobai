@@ -1,0 +1,412 @@
+##language:zh
+#pragma section-numbers off
+##草稿|校对|正式
+||'''status'''|| 校对 ||  ZoomQuiet|| 完成度:100%||
+
+
+[[TableOfContents]]
+
+##startInc
+
+= PCS304 Python Web应用框架纵论 =
+## 一句话精述
+
+ * Web ~ 互联网的泛称;
+ * Web应用 ~ 基于互联网的应用简称;
+ * 框架 ~ Framework,是整个或部分系统的可重用设计,表现为一组抽象构件及构件实例间交互的方法;另一种定义认为,框架是可被应用开发者定制的应用骨架;(前者是从应用方面而后者是从目的方面给出的定义)
+  * 框架是可复用的设计构件库
+  * 框架就是某种应用的半成品
+  * 框架是一个可复用设计,由一组抽象类及其实例间协作关系来表达的
+  * 框架是在一个给定的问题领域内,一个应用程序的一部分设计与实现
+  * 框架是为解决代码复用问题的一个最靠谱的尝试
+  * 框架是,,,
+ * Python Web应用框架 ~ 由Python实现的面向互联网应用开发的框架!
+  * 对于开发者,就是一堆模块和使用这些模块的文档,基于这些框架,可以快速的完成有很高品质的互联网应用系统;而不用要求开发者有多么高深的相关领域经验;
+  * 可以说,框架就是游戏里的组合技,掌握了,就立即可以从菜鸟变成高手!
+ * 不过,在Python 世界,仅仅针对互联网应用的专门框架,就有不下20种!以至有人专门研究:"[http://xlp223.yculblog.com/post.1634226.html 为何有如此多的Python Web实用框架?]"
+{{{脚注:
+访问地址:http://xlp223.yculblog.com/post.1634226.html
+精巧地址:http://tinyurl.com/6yajuo
+}}}
+ * 原文出处:[http://bitworking.org/news/Why_so_many_Python_web_frameworks Why so many Python web frameworks?]
+{{{脚注:
+访问地址:http://bitworking.org/news/Why_so_many_Python_web_frameworks
+精巧地址:http://tinyurl.com/6kv9j3
+}}}
+在此文章中,Joe Gregorio 为了展示任何人可以通过Python快速创建自个儿的Web应用框架,
+当场使用 8个文件(6个Python脚本,一个页面模板文件,一个服务器脚本)创建并运行了一个含有足够功能的应用框架! 
+以些来回答了'''为何有如此多的Python Web实用框架?''':
+ * 因为,`实现一个忒简单了!` 接下来,允许笔者将此框架整体展示一下:
+
+=== Joe Gregorio的超级框架 ===
+ 组成::
+  1. model.py ~ 数据库设计模板脚本{{{#!python
+from sqlalchemy import Table, Column, String
+import dbconfig
+
+entry_table = Table('entry', dbconfig.metadata,
+             Column('id', String(100), primary_key=True),
+             Column('title', String(100)),
+             Column('content', String(30000)),
+             Column('updated', String(20), index=True)
+         )
+}}}
+  1. dbconfig.py ~ 数据库连接配置脚本{{{#!python
+from sqlalchemy import *
+metadata = BoundMetaData('sqlite:///tutorial.db')
+}}}
+  1. manage.py ~ 服务管理脚本{{{#!python
+import os, sys
+
+def create():
+    from sqlalchemy import Table
+    import model
+    for (name, table) in vars(model).iteritems():
+        if isinstance(table, Table):
+            table.create()
+
+def run():
+    '''使用WSGI模式启动服务
+    '''
+    import urls
+    if os.environ.get("REQUEST_METHOD", ""):
+        from wsgiref.handlers import BaseCGIHandler
+        BaseCGIHandler(sys.stdin, sys.stdout, sys.stderr, os.environ).run(urls.urls)
+    else:
+        from wsgiref.simple_server import WSGIServer, WSGIRequestHandler
+        httpd = WSGIServer(('', 8080), WSGIRequestHandler)
+        httpd.set_app(urls.urls)
+        print "Serving HTTP on %s port %s ..." % httpd.socket.getsockname()
+        httpd.serve_forever()
+
+if __name__ == "__main__":
+   if 'create' in sys.argv:
+        create()
+   if 'run' in sys.argv:
+        run()
+}}}
+  1. main.cgi ~ 服务器运行脚本{{{
+#!/usr/bin/python2.4
+import manage
+manage.run()
+}}}
+  1. urls.py ~ 基于URL的对象选择器{{{#!python
+import selector
+import view
+
+urls = selector.Selector()
+urls.add('/blog/', GET=view.list)
+urls.add('/blog/{id}/', GET=view.member_get)
+urls.add('/blog/;create_form', POST=view.create, GET=view.list)
+urls.add('/blog/{id}/;edit_form', GET=view.member_get, POST=view.member_update)
+}}}
+  1. view.py ~ 基于WSGI应用的多个视图{{{#!python
+import robaccia
+import model
+
+def list(environ, start_response):
+    rows = model.entry_table.select().execute()
+    return robaccia.render(start_response, 'list.html', locals())
+
+def member_get(environ, start_response):
+    id = environ['selector.vars']['id']
+    row = model.entry_table.select(model.entry_table.c.id==id).execute().fetchone()
+    return robaccia.render(start_response, 'entry.html', locals())
+
+def create(environ, start_response):
+    pass
+def create_form(environ, start_response):
+    pass
+def member_edit_form(environ, start_response):
+    pass
+def member_update(environ, start_response):
+    pass
+}}}
+  1. robaccia.py ~ 模板处置脚本{{{#!python
+import kid
+import os
+
+extensions = {
+    'html': 'text/html',
+    'atom': 'application/atom+xml'
+}
+
+def render(start_response, template_file, vars):
+    ext = template_file.rsplit(".")
+    contenttype = "text/html"
+    if len(ext) > 1 and (ext[1] in extensions):
+        contenttype = extensions[ext[1]]
+
+    template = kid.Template(file=os.path.join('templates', template_file), **vars)
+    body = template.serialize(encoding='utf-8')
+
+    start_response("200 OK", [('Content-Type', contenttype)])
+    return [body]
+}}}
+  1. list.html ~ 页面应用模板{{{
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:py="http://purl.org/kid/ns#>">
+<head>
+ <title>A Robaccia Blog</title> 
+ </head>
+<div py:for="row in rows.fetchall()">
+<h2>${row.title}</h2>
+<div>${row.content}</div>
+<p><a href="./${row.id}/">${row.updated}</a></p>
+</div>
+</html>
+}}}
+
+ 使用::
+  1. 创建数据库{{{
+~$ python manage.py create
+}}}
+  1. 通过交互环境,初始化数据{{{
+~$ python
+Python 2.4.3 (#2, Apr 27 2006, 14:43:58)
+[GCC 4.0.3 (Ubuntu 4.0.3-1ubuntu5)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import model
+>>> i = model.entry_table.insert()
+>>> i.execute(id='first-post', title="Some Title", content="Some pithy text...",  
+   updated="2006-09-01T01:00:00Z")
+
+>>> i.execute(id='second-post', title="Moving On", content="Some not so pithy words...",  
+   updated="2006-09-01T01:01:00Z")
+}}}
+  1. 独立运行{{{
+~$ python manage.py run
+Serving HTTP on 0.0.0.0 port 8080 ...
+
+}}}
+   * 也可以部署前述 main.cgi 到各种Web服务器中运行发布应用
+
+ 能力::
+  * 通过 SQLAlchemy 进行高效对象化的数据库操作
+   * SQLAlchemy官方网站 http://www.sqlalchemy.org/
+  * 使用 WSGI(Web 服务器网关接口)模式运行
+   * WSGI官方网站: http://www.wsgi.org/wsgi/What_is_WSGI
+   * 精巧地址: http://bit.ly/3IkgU4
+  * 可对URL进行映射管理
+  * 使用 Kid 模板系统,高效输出数据
+   * Kid官方网站 http://www.kid-templating.org/
+   * 精巧地址: http://bit.ly/2YDxPd
+
+是一个完备的,全功能Web应用框架!通过极少的配置和开发,就可以完成一个动态数据展示页面!
+
+== 现状 ==
+正是因为使用Python 能够轻易的将各种即有模块组合出一个Web应用框架来;
+
+所以,不象其它语言世界,仅仅有唯一或是极少数Web应用框架,,,
+
+在Python 世界,有太多太多的应用框架,,,以致于大家被选择哪个所深深困惑! 即怕选择错框架,带来开发的麻烦;又怕一但选定了框架,将来享受不到其它框架更加美妙的特性,,,患得患失中,痛苦渡日;-)
+
+这里行者们根据一些使用过的框架,综合考虑各种因素,大致的给出比较靠谱的Python Web应用框架理解来,以便帮助大家面对异常丰厚的Python Web应用框架,如何保持"平常心",正确对待各种框架;
+
+=== 回顾 ===
+按照笔者接触到框架的时间顺序来排列大致是这样的:
+
+ Zope->Plone->Twisted->Snakelets->CherryPy->Quixote->Karrigell->WukooPy->web.py->Django->TurboGears->Pylons->Eurasia->Web2py->Uliweb
+ 
+
+这里没有给出详细的开发社区情况,以及笔者体验框架的详细日期和情景,只是大致的列出先后接触/了解/应用框架的顺序;以此为基础,分享一点,对Python Web应用框架的体验:
+ * 各个框架都有鲜明的个性! 关注的问题领域各不相同;
+ * 各个框架都有明确的社区, 有专门的开发团队来维护(即使仅仅是一个开发人员);
+ * 各个框架都能在不同程度上和其它框架/模块联接使用(这是Python 的胶水特质决定的);
+ * 各个框架的模板理解各不相同,甚至于有专门研究模板系统的社区!
+ 
+ 模板系统::
+  Template ~ 模板,在Web应用开发中,是为了解决应用逻辑和网页表现间的矛盾而产生的!这一矛盾的根本原因在于: 应用逻辑是在脚本代码中制定的,是必须程序化的,动态化的;而网页表现是在HTML代码中定义的,是要求文本化的,静态化的! 而且,应用逻辑和页面表现分离,也有利于设计和开发团队并行,提高网站的开发效率! 所以,模板系统就是一种解析器,可以将类似HTML代码的文本,和应用逻辑代码结合,输出含有动态数据的静态HTML页面!
+  * 在Python 中,其实是有内置模板支持的:
+   * 访问地址: http://jtauber.com/2006/05/templates.html
+   * 精巧地址: http://bit.ly/QMrd
+  * 但是,这种支持是非常简单的,在一个复杂的功能网站开发中:
+   1. 设计团队期望模板系统支持的模板和HTML是非常接近的,可以直接在游览器中观察到效果的(即使没有动态数据嵌入);
+   1. 开发团队期望模板系统完成以下基础任务:
+    * 可以从模板文件中理解/辨别出显示用的HTML代码
+    * 可以将模板文件和实际生成的数据结合,生成输出页面
+    * 允许同时处理多个模板
+    * 允许模板的嵌套
+    * 允许对模板中的某个单独的部分进行处理
+    * 用起来要简单
+  * 所以,前端模板系统也逐渐成为一个独立的领域,流行模板汇总:
+   * 访问地址:http://wiki.woodpecker.org.cn/moin/PyTemplates
+   * 精巧地址:http://bit.ly/11OWO
+  * 对于Python Web应用框架的模板系统一般分两类:
+   * 一则"编译型",事先编译成可执行中间代码,输出时可以直接融合入数据; 这类模板一般是从其它语言继承过来的,一般使用XML或是其它独特的中间数据结构声明文本,以便和HTML的样式模板结合进行编译;
+   * 二则"解释型",需要动态加载Python 运行渲染出结果再输出; 这类模板一般允许嵌入Python 语句段,可以更加灵活的组合页面输出;
+   * 可能伴随Ajax 技术发展,出现的第三种模板:"JS模板"~完全由JScript 脚本在客户端动态绘制出来! 这方面暂时没有成熟的模板系统可以直接和Web应用框架结合,都需要人工进行开发和调试,暂时不推荐使用;
+ 
+=== 分类 ===
+进一步的,根据前述"Joe Gregorio的超级框架",可以明确一个功能完备的Web应用框架,至少应该包含以下方面的功能支持:
+ 1. 服务发布
+ 1. URL分发
+ 1. 模板支持
+ 1. 数据库处理
+
+各种框架一般前三个方面都支持的不错,那么可以根据对第4个方面的态度大致将所有Python Web应用框架分成以下几类:
+
+ 平台性框架::
+ 这类框架,认为框架不应该依赖数据库,是关注服务的高效构建和运行平台的稳固;Zope和Twisted属于这类,都是非常深遂的框架!
+  * Zope 发布年代之早,开发时间之长,引发的影响之大,甚至于有人认为:"未来互联网就是Zope!";开创了一系列Web应用开发的新技术和理念,形成了宏大的社区和模块树; 虽然学习曲线实在太陡,但是过来人都说:"只要是作Web应用开发,学到底就会发现,其实一切都在Zope 中实现过了!"
+  * Twisted 也是老牌社区的作品,关注网络应用底层支持,支持几乎所有网络协议,关注企业级的网络服务构建;只是缺少立等可取的应用框架,一切都得用Twisted 去现实,算是提供了成套的钻石级工具箱! 
+  
+ 轻小型框架::
+ 这类框架,认为数据库不是应用的必要因素,是关注友好快速的简单任务型网站开发的;CherryPy/Quixote/Karrigell/web.py等等都属于这类框架,标志特性是没有内置的数据库(类似MySQL 的关系型主流数据库)支持模块;
+  * 突出的共同特色有:
+   * 配置简便
+   * 模板系统简单轻便,或是可以自由使用外部模板系统
+   * 调试相对方便,有的甚至有专门的问题回溯机制
+  
+ 一站式框架:: 
+ 这类框架,认为数据库是应用的重要因素,是关注如何仅基于本身就可以快速独立的实现一个功能型网站;Django/TurboGears/Eurasia/UliWeb等等都属于这类框架;
+  * 突出的共同特色有:
+   * 有内置的ORM模块支持数据库的对象化操作;
+   * 有内置的事务性功能支持(比如说登录认证);
+   * 有高级的模板系统,支持复杂的页面组合,有的甚至于有内置的Ajax 页面动态效果支持;
+  * 根据关键功能组件的实现,又分两类:
+   * 一则"All in one 式":任何方面功能都是自行开发内置包含的;
+    * 胜在内部契合严密,所以运行效率比较好;但是,一但有问题就非常难以清查,而且一般很难作到平滑的版本兼容;吻合框架针对的领域开发起来比较爽直,但是难以定制支持另外的情景;
+    * Django 是其中之翘楚;
+   * 二则"Mix-in 式":多数方面功能是直接使用第三方模块来完成的;
+    * 胜在选择自由,可以使用各种类似的已熟悉的功能组件来替代默认的,学习成本小;而且各个组件可以单独升级,版本兼容危机小;但是,由于要兼顾各种组件接口,隐患要多些,又是通过中间层来进行配合的,数据通过了很多类转发,运行效能可能比较低;
+    * TurboGears 是其中经典作品;
+
+
+=== 选择 ===
+现在,虽然可以快速理解现在所有的Py框架,但是谁无法保证不再出现新好框架;那么,如何理性的靠谱的为自个儿的应用选择一个合适的框架?
+
+ 笔者推荐一个思路::
+  根据项目面的特征问题来进行评定,取舍! 核心问题有:
+{{{
+A. 项目是否需要长期运营?
+B. 项目是否足够复杂多变?
+}}}
+  * 判决矩阵:
+|| `A` || `B` || ` ` ||
+||<-2> ''问题状态''|| '''框架选择''' ||
+|| Y || Y ||平台型框架最佳 ||
+|| Y || N ||轻小性框架即可,平台型框架最佳 ||
+|| N || Y ||一站式架最佳 ||
+|| N || N ||轻小性框架最佳 ||
+
+  * 以上是综合考虑到以下因素,而总结的决策矩阵:
+   1. 长期运营时,关键成本在维护,这要求框架足够稳定和容易谅解;
+   1. 业务复杂时,关键成本在开发,这要求框架有足够的内置支持,以便减少开发投入;
+   1. 平台型框架都有浑厚的积累,可以满足一切要求,但是需要一定的学习成本,以便恰当的运用好这些特性;
+   1. 轻小型框架由于代码精悍,一般都有很好的负载能力,而且代码简洁,容易定制和扩展;
+   1. 前端模板系统,的选择主要考虑:
+    * 编译型模板运行效率要高过解释型;
+    * 但是开发时,调试方面则是解释型的比编译型的要直观方便了;
+   1. 功能网站的运行效率,很大部分就是和模板效率以及数据I/O处理效率相关!
+
+==== 但是 ====
+世事无常,虽然我们反对:"手中有锤子,就将世界看作是由钉子组成的!" 
+ * 但是,在Python 世界中,咱们这锤子可是金箍棍的种!尽管选择对口的框架可以事半功倍;
+ * 但是,毕竟框架是那一群牛人在总结了他们的开发经验后,提炼出的框架;
+ * 毕竟,自个儿工作领域不可能百分百的刚好和那群牛人面对的问题域相同;
+ * 所以,更多时候,用熟悉的框架,比用流行的框架要靠谱!因为Python 本质特性,是支持我们快速扩展模块,成为全新的工具!UliWeb/Eurasia 以及久远之前,停止开发的 WukooPy(悟空智轮)这些原创框架,都是增补他人的框架厌烦后,产生的全新框架,也都是可以解决一定领域中的需求;
+ * 所以,在Python 世界,框架从来不是最重要的,最重要的应该是我们使用 Python 的决心和Pythonic 带来的愉乐感,促使我们可以高效的再生出更加好的工具来!
+
+== 导读 ==
+基于以上对 Python Web应用框架的体验,笔者精选出非常有代表性的框架,特邀专家,分别撰写了技术文章,在此,笔者满怀敬意的先进行小小的导读:
+ Zope ~ 超浑厚框架::
+  由中华Zope 推广第一人`Jungyong Pan` 亲笔撰写! 老Pan 对Zope 技术之痴迷到了职业水平,为推广Zope 技术组建了"润普科技"(http://zopen.cn)专职进行基于Zope 的企业信息化解决方案的实施;而且创建了 CZUG~中国Zope 用户组(http://czug.org)翻译/整理了大量的Zope 相关技术文档,为我们学习使用Zope 平台提供了丰厚的资源!
+  在这篇文章中,可以学习到Zope -- 这一从开始就冲着改造世界这一宏伟目标去的技术平台 -- 的基础思想和发展路线,从而树立信心,敢于跳入这一深海中;
+ Quxiote ~ 豆瓣动力核心::
+  豆瓣网(http://www.douban.com) 已经成为全球流量最高的纯Python实现网站! 而使用的应用框架 ~Quxiote 却是个轻小型框架,豆瓣团队是怎么作到的呢?! QiangningHong 是豆瓣核心开发成员,由他撰写的介绍文章,从实际的开发体验出发道出了 Quxiote ~ 唐吉诃德,这一个性框架的本质思想和运用技法,非常难得!
+ Eurasia ~ 关注高性能的原创框架::
+  沈崴 ~ 人称沈游侠,是因为那篇雅俗共赏的妙文:"Python 历史书·GUI 部"
+   * 访问地址: http://wiki.woodpecker.org.cn/moin/PyHiStory/PyGuiHistoric
+   * 精巧地址: http://bit.ly/3R8nHK
+   * 事实上沈崴作为大型IT公司的资深架构师,一直在亲手打造适合自身的应用框架! 仅仅从 Eruasia3的内部名称:`Genhiskhan`~ 成吉思汗 再结合本身的名称Eurasia(欧亚),就可以知道是有多么的自信和自豪了!这一切是源自StacklessPython 的变态能力,以及开发团队变态丰富的项目经验,再加上沈游侠变态的架构能力,最终将这一恶魔级别的框架带到了人间,大家可以从这篇流畅的短文中体验到 `Eurasia` 这一源自真实的大规模应用需求的高级框架的思想和个性;-)
+ UliWeb ~ 关注平衡感的自制框架::
+  这又是一个中国人原创应用框架,作者是Limodou,实际上笔者体验过的各种框架,都是在Limodou 的带领下逐一进行的; Limodou 长期独自在业余时间进行Python 的学习和开发,先后完成了不少作品,其中最成功和知名的就是 UliPad(http://ulipad.appspot.com )~ 这是个纯Python 实现的编辑器,支持各种高级的辅助编程功能; 正是在丰富的开发和应用经验基础上,Limodou 逐渐发现了现有的所有Python Web应用框架,都不是完美的,都有这样那样的缺点;所以,Limodou 决定自个儿写出满足自己所有期望的好框架来,这就是UliWeb 的由来! 而且UliWeb 很大程度上应用了很多在桌面编辑器软件 UliPad 中的开发经验,提供很多命令行的框架应用操控支持,这是其它框架所没有特性;虽然现在UliWeb 还在开发中,但是已经可用,而且形成了独特的应用世界观,大家可以亲自从框架作者的简介中去感受这一世界观;-)
+
+##endInc
+## 练习::
+## 可能的话
+## 设计实用练习,保证每个练习都可以扩展出去
+= 以下是草稿 备用资料回收 =
+"""  沈崴~ 人称沈游侠,因其涉猎之广已经到了传奇的地步!比如说,虽然身为网易的资深系统架构师,但业余在作历史研究--写县志,同时尝试了音乐创作和发行,更加离谱的--还是位靠谱的投资人! 如此传奇的人物,一手打造的应用框架,也必然是传奇的! 仅仅从 Eruasia3的内部名称:`Genhiskhan`~ 成吉思汗 再结合本身的名称Eurasia(欧亚),就可以知道是有多么的自信和自豪了!这一切是源自StacklessPython 的变态能力,以及开发团队变态丰富的项目经验,再加上沈游侠变态的架构能力,最终将这一恶魔级别的框架带到了人间,大家可以从这篇流畅的短文中体验到 `Eurasia` 这一源自真实的大规模应用需求的高级框架的思想和个性;-)
+"""
+== 深入一下,先 ==
+在进入各个框架的精彩介绍前,再来展示一下 Python 世界的奇幻:
+ Eurasia3 中::
+ 已经用 895 行单文件实现了 ZODB
+  * 下载地址: http://code.google.com/p/eurasia/source/browse/trunk/Eurasia/shelve2.py
+  * 精巧地址: http://bit.ly/1yzuqZ
+ 这次更过分了只用 377 行就完成了类似于 Mako 的增强模板系统, 可以直接读取 Mako 格式的模板解析并编译成 Python 程序(和 Mako 一样是编译型模板)
+  * 下载地址: http://code.google.com/p/eurasia/source/browse/trunk/Eurasia/template.py
+  * 精巧地址: http://bit.ly/1rjgdz
+  * 一个模板实例:{{{
+from template import compile, Template
+
+s = '''\
+<%def name="test2(a, b)">
+ ${caller.test3()} or ${context.get('test3', None)()}
+
+ %if a:
+  ${a}
+ %elif b:
+  ${b}
+ %else:
+  <%write('hello')%>
+ %endif
+
+ %for i in xrange(100):
+  ${str(i)}
+ %endfor
+</%def>
+
+<%def name="test(c, d)">
+ <%call expr="test2(1, 2)">
+  <%def name="test3()">
+   <%
+    x = 1
+   %>
+   hello world! in test3
+  </%def>
+ </%call>
+</%def>
+'''
+
+print compile(s)
+
+m = Template(s)
+print m.test('aaa', 'bbb')
+}}}
+
+== 纵论框架 ==
+    {{{
+Python Web应用框架纵论 ::
+ 
+    +-- 导论
+    |  +-- 现状
+    |  \-- 为什么Python 中有这么多框架?
+    +-- 分类
+    |  +-- 如何来理解各种框架?
+    |  +-- 框架的框架
+    |  +-- 轻型框架
+    |  +-- 一站式框架
+    |  \-- 模板系统
+    +-- 细说(按照历史顺序,选择经典框架来介绍,没有PCS独立章节的,和故事没有直接提及的)
+    |  +-- Zope/Plone (请潘俊勇撰写)
+    |  +-- Quixote (请 阿北或是朞其它豆瓣成员 撰写)
+    |  +-- Eruasia (请 沈崴 撰写)
+    |  +-- Django (HY自写)
+    |  \-- UliWeb (请Limodou撰写)
+    +-- 选择
+    |  +-- 个人
+    |  +-- 团队
+    |  \-- 企业
+    \-- 小结
+      \-- 选择的痛苦
+}}}
+
+----
+'''反馈'''
+
+创建 by @USER@ [@TIME@]
+||<^>[[PageComment2]]||<^>[:/PageCommentData:PageCommentData]''||
+

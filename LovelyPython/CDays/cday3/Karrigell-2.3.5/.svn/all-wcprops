@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1742/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5
+END
+LICENCE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/LICENCE.txt
+END
+KarrigellDebug.ini
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/KarrigellDebug.ini
+END
+Karrigell_SocketServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/Karrigell_SocketServer.py
+END
+Karrigell.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/Karrigell.py
+END
+LocalizedRequestHandler.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/LocalizedRequestHandler.py
+END
+Karrigell_vh.ini
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/Karrigell_vh.ini
+END
+Karrigell_GUI.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/Karrigell_GUI.py
+END
+Karrigell_ThreadingSocketServer.py
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/Karrigell_ThreadingSocketServer.py
+END
+Karrigell.ini
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/Karrigell.ini
+END
+KarrigellRequestHandler.py
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/KarrigellRequestHandler.py
+END
+Karrigell_xitami.py
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/1170/trunk/LovelyPython/CDays/cday3/Karrigell-2.3.5/Karrigell_xitami.py
+END

@@ -1,0 +1,367 @@
+#language:zh
+#pragma section-numbers off
+##草稿|校对|正式
+
+||status|| 草稿 ||HuangYi; 100%||
+
+[[TableOfContents]]
+
+##startInc
+= 最流行框架快速体验教程 =
+
+== 啥是 Django ==
+
+Django 诞生于新闻网站。为了满足新闻网站快速的需求变更以及高度互动的特性，World Online 的员工Adrian Holovaty
+和 Simon Willison 创建了这样一套 web 系统，并从中逐渐抽出一个独立的框架，于 2005 年夏天开源了。
+从此，django 迅速成了Python社区人气最旺的web框架。
+
+经过django社区3年来活跃的开发，django已经具备了丰富的功能和很好的稳定性。已经有大量各种领域的网站基于 django 建立 (http://www.djangosites.org/  精巧地址: ) 。
+
+django 自称 MTV 框架，但实际上基本概念跟传统的 MVC 框架大同小异，M 同样指数据模型（Model），
+T 指的是模板（Template），用来描述数据的展现，V 指的是视图（View），实际上类似传统 MVC 框架的控制器，是业务逻辑主要存在的地方
+，并且，在 django 中可以通过URL分发器对 URL 与 View 之间的映射进行配置， 而 View 则被 URL分发器回调。
+
+对于 django 程序来说，一个请求的生命周期大概如下图所示：
+
+attachment:PCS304_django_figure_process.png
+
+django 最大的特点就是快速开发，同时又拥有很丰富的功能。并且 django 通过聪明的设计，可以将每一个 project 分解成相对独立的 app，
+每个 app 可以有自己的 url映射，数据模型，视图，模板等，大大提高了web代码的重用性。
+同时 django 社区有很好的编写可重用 app 的传统，小到用户注册登录的处理，大到后台管理，评论评级系统等，
+都有现成的独立可重用的 app 可以直接使用（http://djangoplugables.com/ ），
+帮助你以迅雷不及掩耳之势搭建功能强大的 web 应用。不过本节处于学习的目的，只使用 django 自带的东西。
+
+下面就跟我一起领略 django 带来的极速 web 开发之旅吧。
+
+== 下载安装 ==
+
+从官方网站(http://www.djangoproject.com/download/  精巧地址: http://bit.ly/1XFW64) 下载最新版本，解压，执行执行命令 {{{python setup.py install}}} 进行安装（当然你很可能需要先获得超级用户权限）。然后旅程开始。
+
+== 快速起步 ==
+
+安装完django后，就该创建项目了。打开一个命令行窗口，找个目录，然后跟我输命令吧。
+
+{{{
+创建项目：
+>django-admin.py startproject simple_wiki
+进入项目的目录：
+>cd simple_wiki
+启动测试服务器：
+simple_wiki>python manage.py runserver
+Validating models...
+0 errors found
+...
+}}}
+
+这样就启动了 Django 自带的开发服务器，现在打开个浏览器访问 http://localhost:8000/ ，
+应该可以看到一个欢迎页面了。
+
+attachment:PCS304_django_welcome.png
+
+我们暂且把这个命令行窗口留着别关，不用管它，后面我们的Python代码修改后，
+此服务器会自动重启以执行最新的代码，可以提高大家的开发效率。当然这只是个开发服务器，
+后面在编写代码的过程中，如果代码出现比较严重的错误，比如语法错误，服务器可能
+会挂掉，到时候重新启动一下就OK了。
+
+下面我们得配置下数据库先，图方便，我们就直接使用Python2.5自带的数据库引擎 sqlite 吧。编辑 settings.py ，设置以下两项： 
+
+{{{#!python
+DATABASE_ENGINE = 'sqlite3'
+DATABASE_NAME = 'data.db'
+}}}
+
+如果你恰好和我一样，在中国大陆并且母语汉语，那就顺便再设置这样两项： 
+
+{{{#!python
+TIME_ZONE = 'Asia/Shanghai'
+LANGUAGE_CODE = 'zh-CN'
+}}}
+
+再把自带的 admin app 启用了，找到 INSTALLED_APPS ，在里面加一行如下： 
+
+{{{#!python
+INSTALLED_APPS = (
+    ...
+    'django.contrib.admin',
+)
+}}}
+
+我们再给自动的 admin 后台管理界面设置一个访问的入口，也就是 url。编辑 urls.py 文件，去掉下面几行代码的注释即可（注意保持Python的缩进）： 
+
+{{{#!python
+...
+from django.contrib import admin
+admin.autodiscover()
+...
+    (r'^admin/(.*)', admin.site.root),
+)
+}}}
+
+然后，创建下数据库。打开一个新的命令行窗口并切换到 simple_wiki 目录，执行命令： 
+
+{{{
+simple_wiki>python manage.py syncdb
+Creating table auth_permission
+...
+}}}
+
+注意：中间需要你输入一个超级用户名、EMail和密码，请记住用户名和密码，等下登陆管理后台有用的。如果忘了可以 data.db 删掉，重新生成下数据库。
+
+现在打开浏览器，访问 http://localhost:8000/admin/ ，输入用户名密码，就可以欣赏 django 自带的 admin 后台管理模块了
+。默认情况下这里面有“用户”和“组”的管理，用来管理网站用户及其权限，不光限于访问后台管理的权限，
+网站的其他模块也可以加入到这个用户和权限的管理中来。还有“站点”，用来管理网站域名的。
+后面你会看到，你还可以很轻松地往里面添加你自己模块的后台管理。
+
+attachment:PCS304_django_admin.png
+
+== 建立Model ==
+
+配置完成后，我们就写个超级简单的 wiki 试试吧。由于对于 django 来说，一个 project 就是一堆 app 的组合，在我们编写功能前，需要先建一个 app ： 
+
+{{{
+simple_wiki>python manage.py startapp wiki
+}}}
+
+然后我们在配置里面启用这个 app ，修改 settings.py 在 INSTALLED_APPS 里面增加一行： 
+
+{{{#!python
+    'simple_wiki.wiki',
+}}}
+
+然后修改 {{{wiki/models.py}}} ，填充如下代码：
+
+{{{#!python
+# coding: utf-8
+from django.db import models
+from django.contrib import admin
+
+# 代表 wiki 页面的 Model
+class WikiPage(models.Model):
+    title = models.CharField(u'页面标题', max_length=255)
+    # 使用 EmailField ，到时候可以让django自动在服务器端验证 Email 的格式
+    email = models.EmailField(u'创建者Email', max_length=255)
+    content = models.TextField(u'页面内容')
+    class Meta:
+        # 显示在管理后台中名字
+        verbose_name = verbose_name_plural = u'Wiki页面'
+
+# 定义 WikiPage 的后台管理界面
+class WikiPageAdmin(admin.ModelAdmin):
+    # 定义列表页显示的字段
+    list_display = ('title', 'email')
+    # 显示搜索框，并定义搜索的字段
+    search_fields = ['title', 'email', 'content']
+    # 设置每页显示数量
+    list_per_page = 50
+
+# 注册到管理后台
+admin.site.register(WikiPage, WikiPageAdmin)
+}}}
+
+记得要保存成 utf-8 编码的文件，本教程中所有文件一律保存成 utf-8 编码的。
+(Model定义的详细内容见： http://docs.djangoproject.com/en/dev/topics/db/models/ 精巧地址：http://bit.ly/8PVye)
+
+然后创建相应的数据表。执行命令： 
+
+{{{#!python
+simple_wiki>python manage.py syncdb
+Creating table wiki_wikipage
+}}}
+
+现在再去看下 http://localhost:8000/admin/ ，是不是发现里面有了Wiki页面的管理后台了？哈哈，爽吧。
+ * 关于定制admin的详细内容: http://docs.djangoproject.com/en/dev/ref/contrib/admin/#ref-contrib-admin
+ * 精巧地址: http://bit.ly/iSN2L
+
+现在不妨利用这个管理后台在里面添加一个标题为 FrontPage 的页面吧，后面用得着。
+
+attachment:PCS304_django_wiki_admin.png
+
+== 展示页面 ==
+
+现在我们再写点代码把数据库里的 wiki 页面展示出来。修改 {{{wiki/views.py}}} ，填充以下内容 ： 
+
+{{{#!python
+# coding: utf-8
+from django.shortcuts import render_to_response, get_object_or_404
+from simple_wiki.wiki.models import WikiPage
+
+def view_page(request, title='FrontPage'):
+    # 根据 title 查询页面数据，如果不存在自动显示 404 错误页面。
+    page = get_object_or_404(WikiPage, title=title)
+    # 渲染模板。
+    return render_to_response('page_view.html', {'page':page})
+}}}
+
+现在，MTV 的 M（Model）和V（View）都有了，下面我们再来增加个 T（Template），在 wiki 目录下面创建目录 templates ，在里面创建模板文件 page_view.html ，内容如下： 
+
+{{{
+<html>
+  <head>
+    <title>{{ page.title }}</title>
+  </head>
+  <body>
+    <div>{{ page.content }}</div>
+    <div><a href="{{ page.title }}/edit">编辑该页面</a></div>
+  </body>
+</html>
+}}}
+
+模板文件中使用 {{ }} 表示把中间的对象的值填充在相应的位置。模板中还有许多其他的语法，比如分支、循环、继承等。
+ * 关于django模板语法的详细内容见:http://docs.djangoproject.com/en/dev/topics/templates/#topics-templates
+ * 精巧地址：http://bit.ly/3QtFpW
+我们还在这个页面里加了一个编辑的链接，编辑功能我们后面很快就会实现。
+
+最后我们再给页面展示定义一个 url，修改 urls.py ，增加一条 url 映射规则如下： 
+
+{{{#!python
+urlpatterns = patterns('',
+    ...
+    (r'^simple_wiki/(\w+?)/?$', 'simple_wiki.wiki.views.view_page'),
+    ...
+}}}
+
+然后访问 http://localhost:8000/simple_wiki/FrontPage ，就可以看到刚才在后台里面添加的那个页面了。
+
+attachment:PCS304_django_wiki_frontpage.png
+
+== 处理表单 ==
+
+现在如果我们访问一个不存在的 wiki 页面，比如 http://localhost:8000/simple_wiki/Python ，
+会得到一个 404 页面。这显然不够友好，应该提示用户去创建相应的页面。修改 wiki/views.py 页面如下： 
+
+{{{#!python
+# coding: utf-8
+from django.shortcuts import render_to_response, get_object_or_404
+from django import forms
+from simple_wiki.wiki.models import WikiPage
+
+# 让 django 从 WikiPage 这个 model 自动产生的 form
+class WikiPageForm(forms.ModelForm):
+    # 覆盖默认的 title 字段，把它的 widget 改成隐藏字段。
+    title = forms.CharField(widget=forms.HiddenInput())
+    class Meta:
+        model = WikiPage
+
+def view_page(request, title='FrontPage'):
+    try:
+        page = WikiPage.objects.get(title=title) # 查询一个页面对象
+    except WikiPage.DoesNotExist:
+        # 如果数据不存在，提示用户创建相应页面
+        return render_to_response('page_empty.html', {'title':title})
+    else:
+        # 页面存在，则显示这个页面。
+        return render_to_response('page_view.html', {'page':page})
+}}}
+
+在 {{{wiki/templates}}} 目录下再添加一个模板 page_empty.html，内容如下： 
+
+{{{
+<html>
+  <head>
+    <title>页面{{ title }}不存在</title>
+  </head>
+  <body>
+    <h1>页面{{ title }}不存在，<a href="{{ title }}/edit">创建该页面</a></h1>
+  </body>
+</html>
+}}}
+
+然后访问 http://localhost:8000/simple_wiki/Python ，是不是发现有了一个提醒用户创建页面的链接。
+
+attachment:PCS304_django_wiki_nopage.png
+
+不过现在链接后面还没有真正创建页面的功能。下面我们继续编写代码，由于创建页面和编辑页面之间很相似，两个功能可以一起完成。在 wiki/views.py 文件顶部增加一行导入： 
+
+{{{#!python
+# HttpResponseRedirect 继承自 HttpResponse，代表页面跳转的 response
+from django.http import HttpResponseRedirect
+}}}
+
+再添加一个 view 函式 edit_page 如下： 
+
+{{{#!python
+def edit_page(request, title):
+    action = u'编辑'
+    if request.method == 'GET':
+        # 如果是 GET 请求，则显示表单
+        try:
+            # 根据 tite 查询 wiki页面
+            page = WikiPage.objects.get(title=title)
+        except WikiPage.DoesNotExist:
+            # 如果不存在该页面，则显示一个创建表单
+            action = u'创建'
+            form = WikiPageForm(initial={'title':title})
+        else:
+            # 否则，显示一个编辑表单
+            form = WikiPageForm(instance=page)
+        return render_to_response('page_edit.html', {'form':form, 'title':title, 'action':action})
+    else:
+        # 如果是POST请求，则提交表单，并保存用户输入的wiki页面数据
+        try:
+            # 根据 tite 查询 wiki页面
+            page = WikiPage.objects.get(title=title)
+        except WikiPage.DoesNotExist:
+            # 如果不存在该页面，则应该创建该页面
+            action = u'创建'
+            form = WikiPageForm(request.POST)
+        else:
+            # 否则应该编辑
+            form = WikiPageForm(request.POST, instance=page)
+        if form.errors:
+            # 表单验证失败，需要提示用户错误信息，并让用户重新输入内容
+            return render_to_response('page_edit.html', {'form':form, 'title':title, 'action':action})
+        page = form.save()
+        # 数据保存成功，跳转到展示页面的地址
+        return HttpResponseRedirect('/simple_wiki/'+page.title)
+}}}
+
+在 {{{wiki/templates}}} 目录下增加显示页面编辑表单的模板 page_edit.html ，内容如下： 
+
+{{{
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/media/css/forms.css" />
+        <title>{{ action }}页面{{ title }}</title>
+    </head>
+    <body>
+        <form method="post" action="">
+            <table>
+                {{ form }}
+            </table>
+            <input type="submit" value="提交"/>
+        </form>
+    </body>
+</html>
+}}}
+
+我们在模板里面引用了一条后台管理程序的css，可以让我们的表单显示得好看一点。
+
+最后在 urls.py 中配置页面编辑的 url： 
+
+{{{#!python
+    (r'^simple_wiki/(\w+?)/edit/?$', 'simple_wiki.wiki.views.edit_page'),
+}}}
+
+现在访问一个不存在 wiki 页面，比如： http://localhost:8000/simple_wiki/Python ，
+点击创建页面链接，填写表单，点击提交，然后跳转到展示的页面。
+尤其值得注意的一点是，这个表单已经拥有了输入验证的能力，比如如果“创建者Email”字段格式不正确，
+会有相应的错误提示，并让用户重新输入。
+
+ * 更多表单处理的介绍：http://docs.djangoproject.com/en/dev/topics/forms/#topics-forms-index 
+ * 精巧地址: http://bit.ly/4FjXrA
+
+attachment:PCS304_django_wiki_createpage.png
+
+填写一个合法的Email地址，提交成功后，便跳转到刚才创建的这个页面：
+
+attachment:PCS304_django_wiki_createsuccess.png
+
+到这里，这个 wiki 就算是顺利完工了！
+
+== 小结 ==
+
+本节内容向大家展示了 django 的快速开发，当然在 Python 的世界里 django 算不上是上手最快的框架，
+但考虑到我们的应用程序中提供的丰富的成熟的功能（后台管理，表单验证等），这个开发速度已经是相当不错了。
+而且我们得到的是一个简洁清晰，容易扩充的代码。所以，还等什么，使用 django 开始构建自己的 web 应用吧。
+
+##endInc
